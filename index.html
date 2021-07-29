@@ -140,14 +140,22 @@
 					</section>
 					
 					<section>
+						<!-- Need XML attr mapping example -->
 						<ul>
 							<li>XPath-like decompose rules</li>
 							<li>DITA, S1000D...</li>
 							<li>
 								<q>Any XML DTD...</q>
 							</li>
-							<li>...and SGML</li>
 						</ul>
+					</section>
+					
+					<section>
+						<p>...and SGML</p>
+						
+						<aside class="notes">
+							<p>It's in their sales specs</p>
+						</aside>
 					</section>
 					
 				</section>
@@ -159,7 +167,7 @@
 				<!-- START of TC Sales Team -->
 				
 				<section>
-					<h3>The Power of a Sales Team</h3>
+					<h3>The Power of a Good Sales Team</h3>
 					
 					<section>
 						<p>The client</p>
@@ -168,37 +176,180 @@
 							<li>S1000D for some products</li>
 							<li>ATA iSpec 22000 SGML</li>
 						</ul>
+						
+						<aside class="notes">
+							<p>Customised DTDs (ATA compliance level)</p>
+						</aside>
 					</section>
 					
 					<section>
 						<p><q>Yes, we support SGML</q></p>
+						
+						<aside class="notes">
+							<p>PoC with EM, SB discussed</p>
+							<p>20+ MB EM, 6,000 images</p>
+							<p>We'll decompose your EM into topics</p>
+						</aside>
 					</section>
+					
+					<!-- Extra slide on EM and entitie? -->
 				</section>
 				
 				<!-- END of TC Sales Team -->
 				
 				
 				
-				<!-- START of PoC Prepping -->
+				<!-- START of SGML Support -->
 				
 				<section>
 					<h3>But Does It Really Support SGML?</h3>
 					
 					<aside class="notes">
 						<p>I started testing days after joining</p>
-						<p>Internal SGML to XML, XML to SGML</p>
+						<p>I taught myself TC alongside the testing</p>
 					</aside>
 					
 					<section>
 						<p>Nope</p>
 						
 						<aside class="notes">
-							<p>S1000D 1.8 SGML only previous test</p>
+							<p>Import would stop</p>
+						</aside>
+					</section>
+					
+				</section>
+				
+				<!-- END of SGML Support -->
+				
+				
+				
+				<!-- START of PoC Prepping -->
+				
+				<section>
+					<h3>Why Not?</h3>
+					
+					<aside class="notes">
+						<p>TC does XML internally</p>
+						<p>Thinking S1000D 1.8 SGML was the only previous test</p>
+						<p>No decompose needed</p>
+					</aside>
+					
+					<section>
+						<p>Beta Testing DLLs</p>
+						
+						<aside class="notes">
+							<p>First fix allowed import, decompose to complete</p>
 						</aside>
 					</section>
 					
 					<section>
+						<p>Graphic Entities</p>
 						
+						<p>6,000 images in the engine manual</p>
+						
+						<aside class="notes">
+							<p></p>
+						</aside>
+					</section>
+					
+					<section>
+						<p>Graphic Entities</p>
+						
+						<!-- name SYSTEM name.suffix example -->
+						
+						<aside class="notes">
+							<p><q>We don't support entities</q></p>
+							<p>One entity format recognised</p>
+						</aside>
+					</section>
+					
+					<section>
+						<p><code>DOCTYPE</code></p>
+						
+						<aside class="notes">
+							<p>Every <q>topic</q> had DOCTYPE with ALL declarations</p>
+							<p>And duplicates</p>
+							<p>Slow checkout</p>
+						</aside>
+					</section>
+					
+					<section>
+						<p><code>EMPTY</code> elements</p>
+						
+						<!-- EMPTY element in SGML -->
+						
+						<aside class="notes">
+							<p>SGML inclusions - revision markers, effectivity - used all over the EM</p>
+						</aside>
+					</section>
+					
+					<section>
+						<p><code>EMPTY</code> elements</p>
+						
+						<!-- EMPTY elements checked out, extra end tags -->
+						
+						<aside class="notes">
+							<p>Extra end tags inserted</p>
+						</aside>
+					</section>
+					
+					<section>
+						<p><code>EMPTY</code> elements</p>
+						
+						<!-- EMPTY element end tag in impossible place -->
+						
+						<aside class="notes">
+							<p>And sometimes in impossible places</p>
+						</aside>
+					</section>
+					
+					<section>
+						<p>Dropping Content</p>
+						
+						<!-- SGML attr with apostrophe example -->
+						<!-- Include entire start tag -->
+						
+						<aside class="notes">
+							<p>But far worse were things like this</p>
+						</aside>
+					</section>
+					
+					<section>
+						<p>Dropping Content</p>
+						
+						<!-- CHECKED OUT: SGML attr with apostrophe example, content dropped -->
+						<!-- Entire start tag, with required attrs dropped -->
+						
+						<aside class="notes">
+							<p>Content would be silently dropped after the apostrophe</p>
+							<p>Plus ALL attributes after the offending one, in document order</p>
+						</aside>
+					</section>
+					
+					<section>
+						<p>Publishing</p>
+						
+						<ol>
+							<li>SP for SGML to XML syntax - <q>ATA-like XML</q></li>
+							<li>XProc pipeline to convert to <q>monolithic DITA</q></li>
+							<li>XSLT to break apart to DITA topics</li>
+							<li>DITA publishing</li>
+						</ol>
+						
+						<aside class="notes">
+							<p>Publish to HTML, PDF was always going to be XML (nobody wanted DSSSL)</p>
+						</aside>
+					</section>
+					
+					<section>
+						<p>(etc)</p>
+						
+						<aside class="notes">
+							<p>And so on</p>
+							<p>Of course, we could blame Siemens</p>
+							<p>and the sales team</p>
+							<p>but</p>
+						</aside>
 					</section>
 					
 				</section>
@@ -209,11 +360,87 @@
 				
 				<!-- START of Is SGML Workable? -->
 				
+				<section>
+					<h3>Is SGML (Still) Workable?</h3>
+					
+					<aside class="notes">
+						<p>This is the question, really</p>
+					</aside>
+					
+					<section>
+						<ul>
+							<li>Current systems no longer supported</li>
+							<li>Three (3) production-quality editors still around</li>
+							<li>Few people know SGML</li>
+							<li>Few tools support SGML</li>
+						</ul>
+						
+						<aside class="notes">
+							<p>Client was forced into this because their existing systems were no longer supported</p>
+							<p>Starting this project, I asked around for an SGML editor - do emacs</p>
+							<p></p>
+						</aside>
+					</section>
+					
+					<section>
+						<p>XML is <q>SGML, the good parts</q></p>
+						
+						<aside class="notes">
+							<p>XML's got the infrastructure (all those things starting with X)</p>
+							<p>TC already does XML internally (and the conversion sucks)</p>
+							<p></p>
+						</aside>
+					</section>
+					
+				</section>
+				
 				<!-- END of Is SGML Workable? -->
 				
 				
 				
 				<!-- START of How About XML-only? -->
+				
+				<section>
+					<h3>How About XML?</h3>
+					
+					<aside class="notes">
+						<p>Client tried moving to XML, failed</p>
+						<p>SGML exchanged with partners, customers</p>
+					</aside>
+					
+					<section>
+						<p><q>ATA-like XML</q> DTDs</p>
+						
+						<aside class="notes">
+							<p>Inclusions the big problem - use PIs in PoC</p>
+							<p>Exclusions - use Schematron</p>
+							<p>Get rid of entities, use href</p>
+						</aside>
+					</section>
+					
+					<section>
+						<p>Publish</p>
+						
+						<aside class="notes">
+							<p>We already have that</p>
+							<p>SGML is a publishing format</p>
+						</aside>
+					</section>
+					
+					<section>
+						<p>SGML to XML import</p>
+						<p>We already have that</p>
+					</section>
+					
+					<section>
+						<p>XML to SGML</p>
+						<ol>
+							<li>Tweak models in XML</li>
+							<li>Generate SGML DOCTYPE (and entities) in XML</li>
+							<li>SP to convert to SGML syntax</li>
+						</ol>
+					</section>
+				</section>
 				
 				<!-- END of How About XML-only? -->
 				
