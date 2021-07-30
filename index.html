@@ -110,39 +110,62 @@
 				<!-- START of SLM -->
 				
 				<section>
-					<h3>SLM</h3>
-					
 					<section>
-						<p>Engineering data</p>
+						<h3>SLM</h3>
 					</section>
 					
 					<section>
-						<ul>
-							<li>Parts lists</li>
-							<li>Procedures</li>
-						</ul>
+						<p>Engineering data</p>
+						
+						<aside class="notes">
+							<ul>
+								<li>Parts lists</li>
+								<li>Procedures</li>
+							</ul>
+						</aside>
 					</section>
 					
 					<section>
 						<p>Marry CAD with topics</p>
-					</section>
-					
-					<section>
-						<p>Teamcenter</p>
+						
+						<span>
+							<img src="img/Bal2021nord01280102.png" alt="Rapid Author and engineering data"/>
+						</span>
 						
 						<aside class="notes">
+							<p>Tasks and parts lists can be generated from the engineering data</p>
 							<p>Which brings me to Siemens Teamcenter (and others like it)</p>
 						</aside>
 					</section>
 					
 					<section>
-						<p>CMS Module</p>
+						<p>Teamcenter CMS Module</p>
+						<span>
+							<img src="img/Bal2021nord01280103.png" alt="Publication Structure in Teamcenter CMS"/>
+						</span>
+						
+						<aside class="notes">
+							<p>CMS module - use TC as a CMS alongside the CAD</p>
+							<p>There's revisions, publishing, etc</p>
+						</aside>
 					</section>
 					
 					<section>
-						<!-- Need XML attr mapping example -->
+						<!-- XML attr mapping example -->
+						<p>Decompose into topics: <q>XML Attribute Mapping</q></p>
+						<span>
+							<img src="img/Bal2021nord01280104.png" alt="XML attribute mapping in Teamcenter"/>
+						</span>
+						
+						<aside class="notes">
+							<p>Everything is seens as <q>topics</q></p>
+							<p>XPath-like decompose rules</p>
+							<p>Think of it as XPath - the bad parts</p>
+						</aside>
+					</section>
+					
+					<section>
 						<ul>
-							<li>XPath-like decompose rules</li>
 							<li>DITA, S1000D...</li>
 							<li>
 								<q>Any XML DTD...</q>
@@ -167,14 +190,17 @@
 				<!-- START of TC Sales Team -->
 				
 				<section>
-					<h3>The Power of a Good Sales Team</h3>
 					
 					<section>
-						<p>The client</p>
+						<h3>The Power of a Good Sales Team</h3>
+					</section>
+					
+					<section>
+						<p>The client:</p>
 						<ul>
 							<li>Already uses Teamcenter</li>
 							<li>S1000D for some products</li>
-							<li>ATA iSpec 22000 SGML</li>
+							<li>ATA iSpec 2200 SGML</li>
 						</ul>
 						
 						<aside class="notes">
@@ -192,7 +218,7 @@
 						</aside>
 					</section>
 					
-					<!-- Extra slide on EM and entitie? -->
+					<!-- Extra slide on EM and entities? -->
 				</section>
 				
 				<!-- END of TC Sales Team -->
@@ -202,12 +228,14 @@
 				<!-- START of SGML Support -->
 				
 				<section>
-					<h3>But Does It Really Support SGML?</h3>
-					
-					<aside class="notes">
-						<p>I started testing days after joining</p>
-						<p>I taught myself TC alongside the testing</p>
-					</aside>
+					<section>
+						<h3>But Does It Really?</h3>
+						
+						<aside class="notes">
+							<p>I started testing days after joining</p>
+							<p>I taught myself TC alongside the testing</p>
+						</aside>
+					</section>
 					
 					<section>
 						<p>Nope</p>
@@ -226,13 +254,16 @@
 				<!-- START of PoC Prepping -->
 				
 				<section>
-					<h3>Why Not?</h3>
 					
-					<aside class="notes">
-						<p>TC does XML internally</p>
-						<p>Thinking S1000D 1.8 SGML was the only previous test</p>
-						<p>No decompose needed</p>
-					</aside>
+					<section>
+						<h3>Why Not?</h3>
+						
+						<aside class="notes">
+							<p>TC does XML internally</p>
+							<p>Thinking S1000D 1.8 SGML was the only previous test</p>
+							<p>No decompose needed</p>
+						</aside>
+					</section>
 					
 					<section>
 						<p>Beta Testing DLLs</p>
@@ -245,28 +276,60 @@
 					<section>
 						<p>Graphic Entities</p>
 						
-						<p>6,000 images in the engine manual</p>
+						<span>
+							<img src="img/6000-lines.png" alt="6000 graphic entity declarations in the DOCTYPE"/>
+						</span>
 						
 						<aside class="notes">
-							<p></p>
+							<p>6,000 images in the engine manual</p>
+							<p>Note the format: name.suffix</p>
 						</aside>
 					</section>
 					
 					<section>
 						<p>Graphic Entities</p>
 						
-						<!-- name SYSTEM name.suffix example -->
+						<pre class="stretch">
+                            <code class="xml" data-trim data-noescape>&lt;!ENTITY name SYSTEM "name.suffix" NDATA CGM></code>
+						</pre>
 						
 						<aside class="notes">
 							<p><q>We don't support entities</q></p>
 							<p>One entity format recognised</p>
+							<p>I had to write a preprocessing thingy</p>
+						</aside>
+					</section>
+					
+					<section>
+						<p>Graphic Entities</p>
+						
+						<pre class="stretch">
+                            <code class="xml" data-trim data-noescape>&lt;!ENTITY name.suffix SYSTEM "name.suffix" NDATA CGM></code>
+						</pre>
+						
+						<!-- Show on click -->
+						<pre class="stretch">
+                            <code class="xml" data-trim data-noescape>&lt;!ENTITY name.suffix SYSTEM "name.suffix.suffix" NDATA CGM></code>
+						</pre>
+						
+						<aside class="notes">
+							<p>This was common (and I understand why)</p>
+							<p>So I tried this but TC wouldn't accept it</p>
+							<p>(because the entity name mapping rules look for suffixes)</p>
+							<p>And of course, there were variations of the naming conventions</p>
 						</aside>
 					</section>
 					
 					<section>
 						<p><code>DOCTYPE</code></p>
 						
+						<!-- Screenshot 6000 lines -->
+						<span>
+							<img src="img/6000-lines.png" alt="6000 lines of graphic entity declarations"/>
+						</span>
+						
 						<aside class="notes">
+							<p>Remember those 6,000 entities?</p>
 							<p>Every <q>topic</q> had DOCTYPE with ALL declarations</p>
 							<p>And duplicates</p>
 							<p>Slow checkout</p>
@@ -274,12 +337,29 @@
 					</section>
 					
 					<section>
+						<p>SGML Inclusions</p>
+						
+						<!-- N&F image -->
+						<span>
+							<img src="img/Bal2021nord01280105.png" alt="" width="400"/>
+						</span>
+						
+						<aside class="notes">
+							<p>SGML inclusions - revision markers, effectivity, etc - used all over the EM</p>
+							<p>Note the inclusion in root</p>
+						</aside>
+					</section>
+					
+					<section>
 						<p><code>EMPTY</code> elements</p>
 						
 						<!-- EMPTY element in SGML -->
+						<pre class="stretch">
+                            <code class="xml" data-trim data-noescape>&lt;PARA>S/B&lt;SBNBR>73-0177&lt;/SBNBR>,&lt;REVST>Revision 1&lt;REVEND>&lt;/PARA></code>
+						</pre>
 						
 						<aside class="notes">
-							<p>SGML inclusions - revision markers, effectivity - used all over the EM</p>
+							<p></p>
 						</aside>
 					</section>
 					
@@ -287,8 +367,12 @@
 						<p><code>EMPTY</code> elements</p>
 						
 						<!-- EMPTY elements checked out, extra end tags -->
+						<pre class="stretch">
+                            <code class="xml" data-trim data-noescape>&lt;PARA>S/B&lt;SBNBR>73-0177&lt;/SBNBR>,&lt;REVST>Revision 1&lt;/REVST>&lt;/REVEND>&lt;/PARA></code>
+						</pre>
 						
 						<aside class="notes">
+							<p>This is what TC checked out to the editor</p>
 							<p>Extra end tags inserted</p>
 						</aside>
 					</section>
@@ -361,11 +445,14 @@
 				<!-- START of Is SGML Workable? -->
 				
 				<section>
-					<h3>Is SGML (Still) Workable?</h3>
 					
-					<aside class="notes">
-						<p>This is the question, really</p>
-					</aside>
+					<section>
+						<h3>Is SGML (Still) Workable?</h3>
+						
+						<aside class="notes">
+							<p>This is the question, really</p>
+						</aside>
+					</section>
 					
 					<section>
 						<ul>
@@ -401,12 +488,15 @@
 				<!-- START of How About XML-only? -->
 				
 				<section>
-					<h3>How About XML?</h3>
 					
-					<aside class="notes">
-						<p>Client tried moving to XML, failed</p>
-						<p>SGML exchanged with partners, customers</p>
-					</aside>
+					<section>
+						<h3>How About XML?</h3>
+						
+						<aside class="notes">
+							<p>Client tried moving to XML, failed</p>
+							<p>SGML exchanged with partners, customers</p>
+						</aside>
+					</section>
 					
 					<section>
 						<p><q>ATA-like XML</q> DTDs</p>
@@ -453,7 +543,7 @@
 						<h3>ATA XML PoC In Progress As We Speak</h3>
 						
 						<aside class="notes">
-							
+							<p></p>
 						</aside>
 					</section>
 					
