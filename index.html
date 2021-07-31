@@ -273,12 +273,13 @@
 						</aside>
 					</section>
 					
+					<!-- ADD: suitable graphic as background -->
 					<section>
 						<p>Graphic Entities</p>
 						
-						<span>
-							<img src="img/6000-lines.png" alt="6000 graphic entity declarations in the DOCTYPE"/>
-						</span>
+						<pre>
+                            <code class="xml" data-trim data-noescape>&lt;!ENTITY g5027619-00.cgm SYSTEM "g5027619-00.cgm" NDATA cgm></code>
+						</pre>
 						
 						<aside class="notes">
 							<p>6,000 images in the engine manual</p>
@@ -289,7 +290,7 @@
 					<section>
 						<p>Graphic Entities</p>
 						
-						<pre class="stretch">
+						<pre>
                             <code class="xml" data-trim data-noescape>&lt;!ENTITY name SYSTEM "name.suffix" NDATA CGM></code>
 						</pre>
 						
@@ -303,12 +304,12 @@
 					<section>
 						<p>Graphic Entities</p>
 						
-						<pre class="stretch">
+						<pre>
                             <code class="xml" data-trim data-noescape>&lt;!ENTITY name.suffix SYSTEM "name.suffix" NDATA CGM></code>
 						</pre>
 						
 						<!-- Show on click -->
-						<pre class="stretch">
+						<pre>
                             <code class="xml" data-trim data-noescape>&lt;!ENTITY name.suffix SYSTEM "name.suffix.suffix" NDATA CGM></code>
 						</pre>
 						
@@ -341,7 +342,7 @@
 						
 						<!-- N&F image -->
 						<span>
-							<img src="img/Bal2021nord01280105.png" alt="" width="400"/>
+							<img src="img/em-dtd-inclusions.png" alt="EM DTD inclusions on root element" style="width: 40%"/>
 						</span>
 						
 						<aside class="notes">
@@ -354,21 +355,15 @@
 						<p><code>EMPTY</code> elements</p>
 						
 						<!-- EMPTY element in SGML -->
-						<pre class="stretch">
-                            <code class="xml" data-trim data-noescape>&lt;PARA>S/B&lt;SBNBR>73-0177&lt;/SBNBR>,&lt;REVST>Revision 1&lt;REVEND>&lt;/PARA></code>
+						<pre>
+                            <code class="xml" data-trim data-noescape>&lt;PARA>S/B&lt;SBNBR>73-0177&lt;/SBNBR>,
+&lt;REVST>Revision 1&lt;REVEND>&lt;/PARA></code>
 						</pre>
 						
-						<aside class="notes">
-							<p></p>
-						</aside>
-					</section>
-					
-					<section>
-						<p><code>EMPTY</code> elements</p>
-						
 						<!-- EMPTY elements checked out, extra end tags -->
-						<pre class="stretch">
-                            <code class="xml" data-trim data-noescape>&lt;PARA>S/B&lt;SBNBR>73-0177&lt;/SBNBR>,&lt;REVST>Revision 1&lt;/REVST>&lt;/REVEND>&lt;/PARA></code>
+						<pre class="fragment">
+                            <code class="xml" data-trim data-noescape>&lt;PARA>S/B&lt;SBNBR>73-0177&lt;/SBNBR>,
+&lt;REVST>Revision 1&lt;/REVST>&lt;/REVEND>&lt;/PARA></code>
 						</pre>
 						
 						<aside class="notes">
@@ -381,6 +376,11 @@
 						<p><code>EMPTY</code> elements</p>
 						
 						<!-- EMPTY element end tag in impossible place -->
+						<pre>
+                            <code data-line-numbers="2" class="xml" data-trim data-noescape>&lt;/SUBTASK>&lt;/TASKPROC>
+&lt;/REVEND>
+&lt;/TASK>&lt;/PGBLK>&lt;/SUBJECT>&lt;/SECTION>&lt;/CHAPTER>&lt;/EM></code>
+						</pre>
 						
 						<aside class="notes">
 							<p>And sometimes in impossible places</p>
@@ -412,16 +412,26 @@
 					
 					<section>
 						<p>Publishing</p>
+						<p class="fragment"><q>DSSSL, anyone?</q></p>
+						
+						<aside class="notes">
+							<p>Publishing was always going to be in	 XML (nobody wanted DSSSL)</p>
+						</aside>
+					</section>
+					
+					<section>
+						<p>Publishing</p>
 						
 						<ol>
 							<li>SP for SGML to XML syntax - <q>ATA-like XML</q></li>
-							<li>XProc pipeline to convert to <q>monolithic DITA</q></li>
-							<li>XSLT to break apart to DITA topics</li>
-							<li>DITA publishing</li>
+							<li class="fragment">XProc pipeline to convert to <q>monolithic DITA</q></li>
+							<li class="fragment">XSLT to break apart to DITA topics</li>
+							<li class="fragment">DITA stylesheets</li>
 						</ol>
 						
 						<aside class="notes">
-							<p>Publish to HTML, PDF was always going to be XML (nobody wanted DSSSL)</p>
+							<p>Conversion to XML</p>
+							<p>We already had the DITA stylesheets (Ant+XSLT 1.0)</p>
 						</aside>
 					</section>
 					
@@ -456,16 +466,15 @@
 					
 					<section>
 						<ul>
-							<li>Current systems no longer supported</li>
 							<li>Three (3) production-quality editors still around</li>
-							<li>Few people know SGML</li>
-							<li>Few tools support SGML</li>
+							<li class="fragment">Few tools support SGML</li>
+							<li class="fragment">Few people know SGML</li>
 						</ul>
 						
 						<aside class="notes">
 							<p>Client was forced into this because their existing systems were no longer supported</p>
 							<p>Starting this project, I asked around for an SGML editor - do emacs</p>
-							<p></p>
+							<p>Plus, few people know SGML</p>
 						</aside>
 					</section>
 					
@@ -475,7 +484,8 @@
 						<aside class="notes">
 							<p>XML's got the infrastructure (all those things starting with X)</p>
 							<p>TC already does XML internally (and the conversion sucks)</p>
-							<p></p>
+							<p>Publishing easy</p>
+							<p>SGML to XML, XML to SGML also easy</p>
 						</aside>
 					</section>
 					
@@ -495,40 +505,57 @@
 						<aside class="notes">
 							<p>Client tried moving to XML, failed</p>
 							<p>SGML exchanged with partners, customers</p>
+							<p>XML gives us a choice of editors, tools, etc</p>
 						</aside>
 					</section>
 					
 					<section>
 						<p><q>ATA-like XML</q> DTDs</p>
 						
+						<ul>
+							<li class="fragment">SGML inclusions => PIs</li>
+							<li class="fragment">SGML exclusions => Schematron rules in editor</li>
+							<li class="fragment">Graphic entities => href links</li>
+						</ul>
+						
 						<aside class="notes">
 							<p>Inclusions the big problem - use PIs in PoC</p>
 							<p>Exclusions - use Schematron</p>
 							<p>Get rid of entities, use href</p>
+							<p>Took me a day or so to convert the DTDs</p>
 						</aside>
 					</section>
 					
 					<section>
 						<p>Publish</p>
+						<p class="fragment">We already have that</p>
 						
 						<aside class="notes">
 							<p>We already have that</p>
-							<p>SGML is a publishing format</p>
+							<p>Legacy conversion uses part of the demo SGML publishing</p>
+							<p>ATA XML publishing uses the other part</p>
+							<p>SGML itself is a publishing format</p>
 						</aside>
 					</section>
 					
 					<section>
-						<p>SGML to XML import</p>
-						<p>We already have that</p>
+						<p>SGML to XML import, legacy conversion</p>
+						<p class="fragment">We already have that</p>
 					</section>
 					
 					<section>
 						<p>XML to SGML</p>
 						<ol>
-							<li>Tweak models in XML</li>
-							<li>Generate SGML DOCTYPE (and entities) in XML</li>
-							<li>SP to convert to SGML syntax</li>
+							<li class="fragment">Tweak models in XML</li>
+							<li class="fragment">Generate SGML DOCTYPE (and entities) in XML</li>
+							<li class="fragment">SP to convert to SGML syntax</li>
 						</ol>
+						
+						<p class="fragment" style="text-align: left">Bonus feature: <br/>Easily tweak the SGML to fit different partners, customers</p>
+						
+						<aside class="notes">
+							<p>Bonus feature: we can tweak the SGML to fit different partners, customers</p>
+						</aside>
 					</section>
 				</section>
 				
