@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Pipelined XSLT</title>
+		<title>Topic-based SGML? Really?</title>
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
@@ -34,12 +34,12 @@
 						<h1 style="">Topic-based SGML?</h1>
 						<h1>Really?</h1>
 						
-						<h3 style="">Balisage 2021</h3>
+						<h3 style="color: #f5f0bc">Balisage 2021</h3>
 						
-						<p style="font-size: smaller;">Ari Nordström | ari.nordstrom@gmail.com</p>
+						<p style="font-size: smaller; color: #f5f0bc;">Ari Nordström | ari.nordstrom@gmail.com</p>
 						
 						<aside class="notes">
-							
+							<p>Me: techpub, legal publish, publishing, SGML, XML, stuff</p>
 						</aside>
 					</section>
 					
@@ -47,7 +47,7 @@
 						<p>Last year, I got myself a new client...</p>
 						
 						<aside class="notes">
-							<p>SLM services provider</p>
+							<p>CAD-IT, SLM services provider</p>
 							<p>Automotive, aerospace clients</p>
 							<p>I'd be the go-to guy for everything markup</p>
 						</aside>
@@ -62,29 +62,17 @@
 					</section>
 					
 					<section>
-						<p>ATA</p>
+						<p>ATA (iSpec 100, 2200)</p>
 						
 						<span>
 							<img src="img/ata-chapters.png" alt="ATA chapters list" style="width: 60%"/>
 						</span>
 						
 						<aside class="notes">
-							<p>iSpec 1000 - systems-oriented doc breakdown</p>
+							<p>iSpec 100 - systems-oriented doc breakdown</p>
 							<p>iSpec 2200 - doc standard, SGML</p>
 						</aside>
 					</section>
-					
-					<!--<section>
-						<p>ATA</p>
-						
-						<span>
-							<img src="img/Bal2021nord01280107.jpg" alt="Functional breakdown"/>
-						</span>
-						
-						<aside class="notes">
-							<p>iSpec 2200 - doc standard, SGML</p>
-						</aside>
-					</section>-->
 					
 					<section>
 						<p>SGML?</p>
@@ -124,6 +112,8 @@
 							<img src="img/Bal2021nord01280102.png" alt="Rapid Author and engineering data" style="width: 75%"/>
 						</span>
 						
+						<p class="fragment">Enter Siemens Teamcenter</p>
+						
 						<aside class="notes">
 							<p>Tasks and parts lists can be generated from the engineering data</p>
 							<p>Which brings me to Siemens Teamcenter (and others like it)</p>
@@ -135,11 +125,12 @@
 						<span>
 							<img src="img/Bal2021nord01280103.png" alt="Publication Structure in Teamcenter CMS"/>
 						</span>
+						<p class="fragment">It's all about <q>topics</q></p>
 						
 						<aside class="notes">
 							<p>CMS module - use TC as a CMS alongside the CAD</p>
 							<p>There's revisions, publishing, etc</p>
-							<p>Everything in TC CMS is about topics</p>
+							<p>Everything in TC CMS is about topics (why they like DITA)</p>
 						</aside>
 					</section>
 					
@@ -151,7 +142,6 @@
 						</span>
 						
 						<aside class="notes">
-							<p>Everything is seens as <q>topics</q></p>
 							<p>XPath-like decompose rules</p>
 							<p>Think of it as XPath - the bad parts</p>
 						</aside>
@@ -164,6 +154,10 @@
 								<q>Any XML DTD...</q>
 							</li>
 						</ul>
+						
+						<aside class="notes">
+							<p>And they say they support <strong>everything</strong></p>
+						</aside>
 					</section>
 					
 					<section>
@@ -180,107 +174,28 @@
 				
 				
 				
-				<!-- START of SLM -->
-				
-				<!--<section>
-					<!-\-<section>
-						<h3>Service Lifecycle Management (<q>SLM</q>) Topics</h3>
-					</section>-\->
-					
-					<section>
-						<p>Engineering data</p>
-						
-						<span>
-							<img src="img/FreeCAD_versi%C3%B3n_0.15.jpg" alt="FreeCAD screenshot with toy plane" style="width: 75%"/>
-						</span>
-						
-						<aside class="notes">
-							<ul>
-								<li>Parts lists</li>
-								<li>Procedures</li>
-							</ul>
-						</aside>
-					</section>
-					
-					<section>
-						<p>Marry CAD with topics</p>
-						
-						<span>
-							<img src="img/Bal2021nord01280102.png" alt="Rapid Author and engineering data" style="width: 75%"/>
-						</span>
-						
-						<aside class="notes">
-							<p>Tasks and parts lists can be generated from the engineering data</p>
-							<p>Which brings me to Siemens Teamcenter (and others like it)</p>
-						</aside>
-					</section>
-					
-					<section>
-						<p>Teamcenter CMS Module</p>
-						<span>
-							<img src="img/Bal2021nord01280103.png" alt="Publication Structure in Teamcenter CMS"/>
-						</span>
-						
-						<aside class="notes">
-							<p>CMS module - use TC as a CMS alongside the CAD</p>
-							<p>There's revisions, publishing, etc</p>
-						</aside>
-					</section>
-					
-					<section>
-						<!-\- XML attr mapping example -\->
-						<p>Decompose into topics: <q>XML Attribute Mapping</q></p>
-						<span>
-							<img src="img/Bal2021nord01280104.png" alt="XML attribute mapping in Teamcenter"/>
-						</span>
-						
-						<aside class="notes">
-							<p>Everything is seens as <q>topics</q></p>
-							<p>XPath-like decompose rules</p>
-							<p>Think of it as XPath - the bad parts</p>
-						</aside>
-					</section>
-					
-					<section>
-						<ul>
-							<li>DITA, S1000D...</li>
-							<li>
-								<q>Any XML DTD...</q>
-							</li>
-						</ul>
-					</section>
-					
-					<section>
-						<p>...and SGML</p>
-						
-						<aside class="notes">
-							<p>It's in their sales specs</p>
-						</aside>
-					</section>
-					
-				</section>-->
-				
-				<!-- END of SLM -->
-				
-				
-				
 				<!-- START of TC Sales Team -->
 				
 				<section>
 					
 					<section>
 						<h3>The Power of a Good Sales Team</h3>
+						
+						<span>
+							<img src="img/used-car-salesman.jpg" alt="Slimy used car salesman" style="width: 60%"/>
+						</span>
 					</section>
 					
 					<section>
 						<p>The client:</p>
 						<ul>
 							<li>Already uses Teamcenter</li>
-							<li>S1000D for some products</li>
-							<li>ATA iSpec 2200 SGML</li>
+							<li class="fragment">S1000D</li>
+							<li class="fragment">ATA iSpec 2200 SGML</li>
 						</ul>
 						
 						<aside class="notes">
+							<p>Current system no longer supported</p>
 							<p>Customised DTDs (ATA compliance level)</p>
 						</aside>
 					</section>
@@ -335,20 +250,23 @@
 					<section>
 						<h3>Why Not?</h3>
 						
+						<p>Beta Testing DLLs</p>
+						
 						<aside class="notes">
+							<p>First fix allowed import, decompose to complete</p>
 							<p>TC does XML internally</p>
 							<p>Thinking S1000D 1.8 SGML was the only previous test</p>
 							<p>No decompose needed</p>
 						</aside>
 					</section>
 					
-					<section>
+					<!--<section>
 						<p>Beta Testing DLLs</p>
 						
 						<aside class="notes">
 							<p>First fix allowed import, decompose to complete</p>
 						</aside>
-					</section>
+					</section>-->
 					
 					<!-- ADD: suitable graphic as background -->
 					<section>
@@ -470,18 +388,18 @@
 						<!-- SGML attr with apostrophe example -->
 						<!-- Include entire start tag -->
 						
+						<pre>
+                            <code class="xml" data-trim data-noescape>&lt;SBEFF EFFTEXT="Bolthead at Bolthole No. 15 Facing 
+the 12:00 O'clock Position" SBNBR="72-0078" SBCOND="PRE SB"></code>
+						</pre>
+						
+						<pre class="fragment">
+                            <code class="xml" data-trim data-noescape>&lt;SBEFF EFFTEXT="Bolthead at Bolthole No. 15 Facing 
+the 12:00 o"></code>
+						</pre>
+						
 						<aside class="notes">
 							<p>But far worse were things like this</p>
-						</aside>
-					</section>
-					
-					<section>
-						<p>Dropping Content</p>
-						
-						<!-- CHECKED OUT: SGML attr with apostrophe example, content dropped -->
-						<!-- Entire start tag, with required attrs dropped -->
-						
-						<aside class="notes">
 							<p>Content would be silently dropped after the apostrophe</p>
 							<p>Plus ALL attributes after the offending one, in document order</p>
 						</aside>
@@ -500,15 +418,58 @@
 						<p>Publishing</p>
 						
 						<ol>
-							<li>SP for SGML to XML syntax - <q>ATA-like XML</q></li>
+							<li class="fragment">SP for SGML to XML syntax - <q>ATA-like XML</q></li>
 							<li class="fragment">XProc pipeline to convert to <q>monolithic DITA</q></li>
 							<li class="fragment">XSLT to break apart to DITA topics</li>
 							<li class="fragment">DITA stylesheets</li>
 						</ol>
 						
 						<aside class="notes">
+							<p>The difficult bits all had to do with SP documentation</p>
 							<p>Conversion to XML</p>
 							<p>We already had the DITA stylesheets (Ant+XSLT 1.0)</p>
+						</aside>
+					</section>
+					
+					<section>
+						<p>The XML bits were uncomplicated</p>
+						
+						<pre>
+                            <code class="bash" data-trim data-noescape>0-em-basic-structure.xml
+1-ATA2DITA_main-structure.xsl.xml
+2-ATA2DITA_tasks.xsl.xml
+3-ATA2DITA_front-matter.xsl.xml
+4-ATA2DITA_tfmatr.xsl.xml
+5-ATA2DITA_prclists.xsl.xml
+6-ATA2DITA_figtopic.xsl.xml
+7-ATA2DITA_effectivity.xsl.xml
+8-ATA2DITA_chgdesc.xsl.xml
+9-ATA2DITA_dates.xsl.xml
+10-ATA2DITA_lxlists.xsl.xml
+11-ATA2DITA_table.xsl.xml
+12-ATA2DITA_lists.xsl.xml
+13-ATA2DITA_block-level.xsl.xml
+14-ATA2DITA_graphics.xsl.xml
+15-ATA2DITA_delete-ind.xsl.xml
+16-ATA2DITA_inline.xsl.xml
+17-ATA2DITA_xref.xsl.xml
+18-ATA2DITA_ata-inline.xsl.xml
+19-ATA2DITA_topic-ids.xsl.xml
+20-ATA2DITA_mtoss.xsl.xml
+21-ATA2DITA_misc-amattrs.xsl.xml
+22-ATA2DITA_revmarkers.xsl.xml
+23-ATA2DITA_attrs.xsl.xml
+24-ATA2DITA_id-href-consistency.xsl.xml
+25-ATA2DITA_ref-target.xsl.xml
+26-ATA2DITA_base-attrs.xsl.xml
+27-ATA2DITA_move-data-about.xsl.xml
+28-ATA2DITA_cleanup.xsl.xml</code>
+						</pre>
+						
+						<aside class="notes">
+							<p>XProc pipeline - 28 steps of XSLTs in sequence</p>
+							<p>Have a look at my paper from last year on how this is done</p>
+							<p>Followed by a stylesheet splitting the results</p>
 						</aside>
 					</section>
 					
@@ -516,7 +477,7 @@
 						<p>(etc)</p>
 						
 						<aside class="notes">
-							<p>And so on</p>
+							<p>And numerous other issues</p>
 							<p>Of course, we could blame Siemens</p>
 							<p>and the sales team</p>
 							<p>but</p>
@@ -542,8 +503,9 @@
 					</section>
 					
 					<section>
+						<p>Let's look at the evidence...</p>
 						<ul>
-							<li>Three (3) production-quality editors still around</li>
+							<li class="fragment">Three (3) production-quality editors still around</li>
 							<li class="fragment">Few tools support SGML</li>
 							<li class="fragment">Few people know SGML</li>
 						</ul>
@@ -556,7 +518,8 @@
 					</section>
 					
 					<section>
-						<p>XML is <q>SGML, the good parts</q></p>
+						<p>XML really is</p>
+						<p><q>SGML, the good parts</q></p>
 						
 						<aside class="notes">
 							<p>XML's got the infrastructure (all those things starting with X)</p>
@@ -577,7 +540,7 @@
 				<section>
 					
 					<section>
-						<h3>How About XML?</h3>
+						<h3>So, What About XML?</h3>
 						
 						<aside class="notes">
 							<p>Client tried moving to XML, failed</p>
@@ -594,6 +557,8 @@
 							<li class="fragment">SGML exclusions => Schematron rules in editor</li>
 							<li class="fragment">Graphic entities => href links</li>
 						</ul>
+						
+						<p class="fragment">XML gives us a choice of tools</p>
 						
 						<aside class="notes">
 							<p>Inclusions the big problem - use PIs in PoC</p>
@@ -628,10 +593,11 @@
 							<li class="fragment">SP to convert to SGML syntax</li>
 						</ol>
 						
-						<p class="fragment" style="text-align: left">Bonus feature: <br/>Easily tweak the SGML to fit different partners, customers</p>
+						<p class="fragment" style="text-align: left">Bonus feature: <br/>Easily tweak the SGML output to fit different partners, customers</p>
 						
 						<aside class="notes">
 							<p>Bonus feature: we can tweak the SGML to fit different partners, customers</p>
+							<p>All done in XML, using XML technologies</p>
 						</aside>
 					</section>
 				</section>
@@ -644,18 +610,26 @@
 				
 				<section data-background="img/" data-background-size="100%">
 					<section>
-						<h3>ATA XML PoC In Progress As We Speak</h3>
+						<h3>They're Testing the ATA XML Version as We Speak</h3>
 						
 						<aside class="notes">
-							<p></p>
+							<p>I've been on holiday, I finished this right before I left</p>
 						</aside>
 					</section>
 					
 					<section>
 						<h3>SGML? Really?</h3>
 						
+						<ul>
+							<li class="fragment">SGML has no infrastructure (we built all of it, every single time)</li>
+							<li class="fragment">SGML works as an output format</li>
+						</ul>
+						
 						<aside class="notes">
 							<!-- Is SGML an option still? No. -->
+							<p>I cannot stress this enough: SGML has no infrastructure</p>
+							<p>SGML projects used to run for a year - remember that?</p>
+							<p>Use it as a publishing format and convince the recipients to move away from it, too</p>
 						</aside>
 					</section>
 					
