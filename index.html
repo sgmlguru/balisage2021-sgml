@@ -284,6 +284,7 @@
 						<aside class="notes">
 							<p>Thinking S1000D 1.8 SGML was the only previous test</p>
 							<p>No decompose was needed</p>
+							<p>First fix allowed import, decompose</p>
 						</aside>
 					</section>
 					
@@ -293,10 +294,9 @@
 						</span>
 						
 						<aside class="notes">
-							<p>I reported, Siemens devs fixed</p>
-							<p>First fix allowed import, decompose</p>
+							<p>TC is huge</p>
+							<p>CMS (3rd party product bought by Siemens) is just one module</p>
 							<p>Let's discuss some of the issues</p>
-							<p><q>SGML learning/teaching experience</q></p>
 						</aside>
 					</section>
 					
@@ -307,7 +307,7 @@
 						
 						<aside class="notes">
 							<p>6,000 images in the engine manual</p>
-							<p>Note the format: name.suffix</p>
+							<p>Note the format: name.suffix (by no means the only format)</p>
 						</aside>
 					</section>
 					
@@ -353,20 +353,6 @@
 							<p>Slow checkout, export, publish</p>
 						</aside>
 					</section>
-					
-					<!--<section>
-						<p>SGML inclusions</p>
-						
-						<!-\- N&F image -\->
-						<span>
-							<img src="img/em-dtd-inclusions.png" alt="EM DTD inclusions on root element" style="width: 30%"/>
-						</span>
-						
-						<aside class="notes">
-							<p>SGML inclusions - revision markers, effectivity, etc - used all over the EM</p>
-							<p>Note the inclusion in root</p>
-						</aside>
-					</section>-->
 					
 					<section>
 						<p><code>EMPTY</code> elements</p>
@@ -500,12 +486,18 @@ the 12:00 o"></code>
 							<li>Editor integration</li>
 							<li>(etc)</li>
 						</ul>
+					</section>
+					
+					<section>
+						<p>But far worse still...</p>
+						<p class="fragment">Few of the people involved know SGML</p>
+						
 						
 						<aside class="notes">
-							<p>And numerous other issues</p>
-							<p>Of course, we could blame Siemens</p>
-							<p>and the sales team</p>
-							<p>but that would be dodging the real question</p>
+							<p>They'd send DLLs, I'd test</p>
+							<p>I'd run nsgmls and explain the results to them</p>
+							<p>I'd teach them markup and SGML</p>
+							<p>We could blame Siemens, sales team, BUT</p>
 						</aside>
 					</section>
 					
@@ -537,7 +529,7 @@ the 12:00 o"></code>
 						
 						<aside class="notes">
 							<p>Client was forced into this because their existing systems were no longer supported</p>
-							<p>Starting this project, I asked around for an SGML editor - do emacs</p>
+							<p>I asked around for an SGML editor - do emacs</p>
 							<p>Plus, few people know SGML</p>
 						</aside>
 					</section>
