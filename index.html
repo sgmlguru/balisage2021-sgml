@@ -250,31 +250,26 @@
 					<section>
 						<h3>Why Not?</h3>
 						
-						<p>Beta Testing DLLs</p>
-						
 						<aside class="notes">
-							<p>First fix allowed import, decompose to complete</p>
-							<p>TC does XML internally</p>
 							<p>Thinking S1000D 1.8 SGML was the only previous test</p>
 							<p>No decompose needed</p>
 						</aside>
 					</section>
 					
-					<!--<section>
-						<p>Beta Testing DLLs</p>
+					<section>
+						<h4>Beta Testing DLLs</h4>
 						
 						<aside class="notes">
 							<p>First fix allowed import, decompose to complete</p>
+							<p>TC does XML internally</p>
 						</aside>
-					</section>-->
+					</section>
 					
 					<!-- ADD: suitable graphic as background -->
 					<section>
-						<p>Graphic Entities</p>
+						<h4>Graphic Entities</h4>
 						
-						<pre>
-                            <code class="xml" data-trim data-noescape>&lt;!ENTITY g5027619-00.cgm SYSTEM "g5027619-00.cgm" NDATA cgm></code>
-						</pre>
+						<p class="r-fit-text">&lt;!ENTITY g5027619-00.cgm SYSTEM "g5027619-00.cgm" NDATA cgm></p>
 						
 						<aside class="notes">
 							<p>6,000 images in the engine manual</p>
@@ -283,11 +278,7 @@
 					</section>
 					
 					<section>
-						<p>Graphic Entities</p>
-						
-						<pre>
-                            <code class="xml" data-trim data-noescape>&lt;!ENTITY name SYSTEM "name.suffix" NDATA CGM></code>
-						</pre>
+						<p class="r-fit-text">&lt;!ENTITY name SYSTEM "name.suffix" NDATA cgm></p>
 						
 						<aside class="notes">
 							<p><q>We don't support entities</q></p>
@@ -297,16 +288,10 @@
 					</section>
 					
 					<section>
-						<p>Graphic Entities</p>
 						
-						<pre>
-                            <code class="xml" data-trim data-noescape>&lt;!ENTITY name.suffix SYSTEM "name.suffix" NDATA CGM></code>
-						</pre>
+						<p class="r-fit-text">&lt;!ENTITY g5027619-00.cgm SYSTEM "g5027619-00.cgm" NDATA cgm></p>
 						
-						<!-- Show on click -->
-						<pre>
-                            <code class="xml" data-trim data-noescape>&lt;!ENTITY name.suffix SYSTEM "name.suffix.suffix" NDATA CGM></code>
-						</pre>
+						<p class="fragment r-fit-text">&lt;!ENTITY g5027619-00.cgm SYSTEM "g5027619-00.cgm<span class="fragment highlight-red">.cgm</span>" NDATA cgm></p>
 						
 						<aside class="notes">
 							<p>This was common (and I understand why)</p>
@@ -317,9 +302,8 @@
 					</section>
 					
 					<section>
-						<p><code>DOCTYPE</code></p>
+						<h4><code>DOCTYPE</code></h4>
 						
-						<!-- Screenshot 6000 lines -->
 						<span>
 							<img src="img/6000-lines.png" alt="6000 lines of graphic entity declarations"/>
 						</span>
@@ -328,12 +312,12 @@
 							<p>Remember those 6,000 entities?</p>
 							<p>Every <q>topic</q> had DOCTYPE with ALL declarations</p>
 							<p>And duplicates</p>
-							<p>Slow checkout</p>
+							<p>Slow checkout, export, publish</p>
 						</aside>
 					</section>
 					
 					<section>
-						<p>SGML Inclusions</p>
+						<h4>SGML Inclusions</h4>
 						
 						<!-- N&F image -->
 						<span>
@@ -347,7 +331,7 @@
 					</section>
 					
 					<section>
-						<p><code>EMPTY</code> elements</p>
+						<h4><code>EMPTY</code> elements</h4>
 						
 						<!-- EMPTY element in SGML -->
 						<pre>
@@ -368,8 +352,6 @@
 					</section>
 					
 					<section>
-						<p><code>EMPTY</code> elements</p>
-						
 						<!-- EMPTY element end tag in impossible place -->
 						<pre>
                             <code data-line-numbers="2" class="xml" data-trim data-noescape>&lt;/SUBTASK>&lt;/TASKPROC>
@@ -383,10 +365,7 @@
 					</section>
 					
 					<section>
-						<p>Dropping Content</p>
-						
-						<!-- SGML attr with apostrophe example -->
-						<!-- Include entire start tag -->
+						<h4>Dropping Content</h4>
 						
 						<pre>
                             <code class="xml" data-trim data-noescape>&lt;SBEFF EFFTEXT="Bolthead at Bolthole No. 15 Facing 
@@ -406,7 +385,7 @@ the 12:00 o"></code>
 					</section>
 					
 					<section>
-						<p>Publishing</p>
+						<h4>Publishing</h4>
 						<p class="fragment"><q>DSSSL, anyone?</q></p>
 						
 						<aside class="notes">
@@ -415,8 +394,6 @@ the 12:00 o"></code>
 					</section>
 					
 					<section>
-						<p>Publishing</p>
-						
 						<ol>
 							<li class="fragment">SP for SGML to XML syntax - <q>ATA-like XML</q></li>
 							<li class="fragment">XProc pipeline to convert to <q>monolithic DITA</q></li>
@@ -432,7 +409,7 @@ the 12:00 o"></code>
 					</section>
 					
 					<section>
-						<p>The XML bits were uncomplicated</p>
+						<h4>The XML bits were uncomplicated</h4>
 						
 						<pre>
                             <code class="bash" data-trim data-noescape>0-em-basic-structure.xml
@@ -470,17 +447,22 @@ the 12:00 o"></code>
 							<p>XProc pipeline - 28 steps of XSLTs in sequence</p>
 							<p>Have a look at my paper from last year on how this is done</p>
 							<p>Followed by a stylesheet splitting the results</p>
+							<p>So publishing can be solved with XML</p>
 						</aside>
 					</section>
 					
 					<section>
-						<p>(etc)</p>
+						<ul>
+							<li>Decompose/compose performance</li>
+							<li>Editor integration</li>
+							<li>(etc)</li>
+						</ul>
 						
 						<aside class="notes">
 							<p>And numerous other issues</p>
 							<p>Of course, we could blame Siemens</p>
 							<p>and the sales team</p>
-							<p>but</p>
+							<p>but that would be dodging the real question</p>
 						</aside>
 					</section>
 					
@@ -574,8 +556,8 @@ the 12:00 o"></code>
 						
 						<aside class="notes">
 							<p>We already have that</p>
-							<p>Legacy conversion uses part of the demo SGML publishing</p>
-							<p>ATA XML publishing uses the other part</p>
+							<p>Legacy conversion: part 1 of demo SGML publish</p>
+							<p>ATA XML publishing: part 2</p>
 							<p>SGML itself is a publishing format</p>
 						</aside>
 					</section>
@@ -610,7 +592,8 @@ the 12:00 o"></code>
 				
 				<section data-background="img/" data-background-size="100%">
 					<section>
-						<h3>They're Testing the ATA XML Version as We Speak</h3>
+						<h3>Now</h3>
+						<p class="fragment">They're testing the ATA XML approach right now</p>
 						
 						<aside class="notes">
 							<p>I've been on holiday, I finished this right before I left</p>
