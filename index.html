@@ -97,10 +97,11 @@
 						
 						<aside class="notes">
 							<ul>
-								<li>A lot about SLM is about engineering data and CAD</li>
-								<li>My colleagues are engineers and technical illustrators, authors</li>
-								<li>Parts lists</li>
-								<li>Assembly/disassembly</li>
+								<li>SLM is about engineering data, CAD</li>
+								<li>CAD-IT: engineers, technical authors</li>
+								<li>Engineering data is the entire product</li>
+								<li>Parts, kits, all of it</li>
+								<li>This can be used to great effect in techpub</li>
 							</ul>
 						</aside>
 					</section>
@@ -115,8 +116,9 @@
 						<p class="fragment">Enter Siemens Teamcenter</p>
 						
 						<aside class="notes">
-							<p>Tasks and parts lists can be generated from the engineering data</p>
+							<p>Assembly/disassembly tasks, parts lists generated from engineering data</p>
 							<p>Which brings me to Siemens Teamcenter (and others like it)</p>
+							<p>What you see here is eng data from TC with generated XML tasks in Rapid Author</p>
 						</aside>
 					</section>
 					
@@ -135,8 +137,22 @@
 					</section>
 					
 					<section>
+						<p>Decomposing documents into topics</p>
+						
+						<span>
+							<img src="img/Bal2021nord01280101.png" alt="Topics and subtopics mind map" style="width: 40%"/>
+						</span>
+						
+						<aside class="notes">
+							<p>Sort of like DITA maps</p>
+							<p>But really, this is a relational DB</p>
+							<p>Hierarchies don't exist as XML in DB</p>
+						</aside>
+					</section>
+					
+					<section>
 						<!-- XML attr mapping example -->
-						<p>Decomposing into topics: <q>XML Attribute Mapping</q></p>
+						<p><q>XML Attribute Mapping</q></p>
 						<span>
 							<img src="img/Bal2021nord01280104.png" alt="XML attribute mapping in Teamcenter"/>
 						</span>
@@ -189,7 +205,8 @@
 					<section>
 						<p>The client:</p>
 						<ul>
-							<li>Already uses Teamcenter</li>
+							<li>Aerospace manufacturer</li>
+							<li class="fragment">Already uses Teamcenter</li>
 							<li class="fragment">S1000D</li>
 							<li class="fragment">ATA iSpec 2200 SGML</li>
 						</ul>
@@ -201,7 +218,7 @@
 					</section>
 					
 					<section>
-						<p><q>Yes, we support SGML</q></p>
+						<p><q>Yes, Teamcenter supports SGML</q></p>
 						
 						<span>
 							<img src="img/em-dtd-inclusions.png" alt="EM DTD inclusions on root element" style="width: 30%"/>
@@ -266,7 +283,7 @@
 						
 						<aside class="notes">
 							<p>Thinking S1000D 1.8 SGML was the only previous test</p>
-							<p>No decompose needed</p>
+							<p>No decompose was needed</p>
 						</aside>
 					</section>
 					
@@ -276,10 +293,10 @@
 						</span>
 						
 						<aside class="notes">
-							<p>Siemens devs started fixing stuff I reported</p>
-							<p>First fix allowed import, decompose to complete</p>
+							<p>I reported, Siemens devs fixed</p>
+							<p>First fix allowed import, decompose</p>
 							<p>Let's discuss some of the issues</p>
-							<p><q>SGML teaching experience</q></p>
+							<p><q>SGML learning/teaching experience</q></p>
 						</aside>
 					</section>
 					
@@ -297,14 +314,18 @@
 					<section>
 						<p class="r-fit-text">&lt;!ENTITY name SYSTEM "name.suffix" NDATA cgm></p>
 						
+						<p class="fragment">Preprocessing to rename files - didn't want to edit the SGML itself, just the entity declarations and filenames</p>
+						
+						<p class="fragment r-fit-text">&lt;!ENTITY name.suffix SYSTEM "name.suffix<span class="fragment highlight-red">.suffix</span>" NDATA cgm></p>
+						
 						<aside class="notes">
-							<p><q>We don't support entities</q></p>
 							<p>One entity format recognised</p>
-							<p>I had to write a preprocessing thingy</p>
+							<p>Preprocessing pipeline - avoid changing content if possible</p>
+							<p>Of course, many variations of the naming conventions</p>
 						</aside>
 					</section>
 					
-					<section>
+					<!--<section>
 						
 						<p class="r-fit-text">&lt;!ENTITY g5027619-00.cgm SYSTEM "g5027619-00.cgm" NDATA cgm></p>
 						
@@ -316,7 +337,7 @@
 							<p>(because the entity name mapping rules look for suffixes)</p>
 							<p>And of course, there were variations of the naming conventions</p>
 						</aside>
-					</section>
+					</section>-->
 					
 					<section>
 						<p><code>DOCTYPE</code></p>
@@ -407,12 +428,12 @@ the 12:00 o"></code>
 						<p class="fragment"><q>DSSSL, anyone?</q></p>
 						
 						<aside class="notes">
-							<p>Publishing was always going to be in	 XML (nobody wanted DSSSL)</p>
+							<p>Publishing was always going to be XML (nobody wanted DSSSL)</p>
 						</aside>
 					</section>
 					
 					<section>
-						<p>Nah, XML technologies:</p>
+						<p>No DSSSL, (mostly) XML technologies:</p>
 						<ol>
 							<li class="fragment">SP for SGML to XML syntax - <q>ATA-like XML</q></li>
 							<li class="fragment">XProc pipeline to convert to <q>monolithic DITA</q></li>
@@ -421,9 +442,11 @@ the 12:00 o"></code>
 						</ol>
 						
 						<aside class="notes">
-							<p>The difficult bits all had to do with SP documentation</p>
-							<p>Conversion to XML</p>
-							<p>We already had the DITA stylesheets (Ant+XSLT 1.0)</p>
+							<p></p>
+							<p>Already had DITA stylesheets (Ant+XSLT 1.0)</p>
+							<p>Difficult bits all about SP documentation</p>
+							<p>Conversion to ATA-like XML</p>
+							<p>Conversion to monolithic DITA</p>
 						</aside>
 					</section>
 					
@@ -554,37 +577,37 @@ the 12:00 o"></code>
 					<section>
 						<p><q>ATA-like XML</q> DTDs</p>
 						
-						<ul>
-							<li class="fragment">SGML inclusions => PIs</li>
-							<li class="fragment">SGML exclusions => Schematron rules in editor</li>
-							<li class="fragment">Graphic entities => href links</li>
-						</ul>
-						
-						<p class="fragment">XML gives us a choice of tools</p>
+						<div style="display: flex;">
+							<div>
+								<img src="img/em-dtd-inclusions.png" alt="EM DTD inclusions on root" style="width: 80%"/>
+							</div>
+							<div>
+								<ul>
+									<li class="fragment">SGML inclusions => PIs</li>
+									<li class="fragment">SGML exclusions => Schematron rules</li>
+									<li class="fragment">Graphic entities => href links</li>
+								</ul>
+							</div>
+						</div>
 						
 						<aside class="notes">
 							<p>Inclusions the big problem - use PIs in PoC</p>
 							<p>Exclusions - use Schematron</p>
 							<p>Get rid of entities, use href</p>
-							<p>Took me a day or so to convert the DTDs</p>
+							<p>Took me a day to convert the DTDs</p>
+							<p>XML gives us a choice of tools - authoring env took me another day</p>
 						</aside>
 					</section>
 					
 					<section>
-						<p>Publish</p>
-						<p class="fragment">We already have that</p>
+						<p>Publishing and legacy SGML conversion</p>
+						<p class="fragment">We already have both</p>
 						
 						<aside class="notes">
-							<p>We already have that</p>
 							<p>Legacy conversion: part 1 of demo SGML publish</p>
 							<p>ATA XML publishing: part 2</p>
 							<p>SGML itself is a publishing format</p>
 						</aside>
-					</section>
-					
-					<section>
-						<p>SGML to XML import, legacy conversion</p>
-						<p class="fragment">We already have that</p>
 					</section>
 					
 					<section>
@@ -625,7 +648,8 @@ the 12:00 o"></code>
 						
 						<ul>
 							<li class="fragment">No infrastructure (we built all of it, every single time)</li>
-							<li class="fragment">Works as a publishing format</li>
+							<li class="fragment">Works as publishing output</li>
+							<li class="fragment">Other than that, please don't.</li>
 						</ul>
 						
 						<aside class="notes">
