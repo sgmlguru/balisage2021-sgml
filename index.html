@@ -75,7 +75,7 @@
 					</section>
 					
 					<section>
-						<h4>SGML?</h4>
+						<p>SGML?</p>
 						
 						<span>
 							<img src="img/sgml-cd-cover.jpg" alt="SGML CD book cover" style="width: 25%"/>
@@ -89,7 +89,7 @@
 					</section>
 					
 					<section>
-						<h4>SLM and Engineering Data</h4>
+						<p>SLM and engineering data</p>
 						
 						<span>
 							<img src="img/FreeCAD_version_0.15.jpg" alt="FreeCAD screenshot with toy plane" style="width: 75%"/>
@@ -106,7 +106,7 @@
 					</section>
 					
 					<section>
-						<h4>Marry CAD with topics</h4>
+						<p>Marry CAD with topics</p>
 						
 						<span>
 							<img src="img/Bal2021nord01280102.png" alt="Rapid Author, engineering data and embedded XMAX editor" style="width: 75%"/>
@@ -121,7 +121,7 @@
 					</section>
 					
 					<section>
-						<h4>Teamcenter CMS Module</h4>
+						<p>Teamcenter CMS module</p>
 						<span>
 							<img src="img/Bal2021nord01280103.png" alt="Publication Structure in Teamcenter CMS"/>
 						</span>
@@ -136,7 +136,7 @@
 					
 					<section>
 						<!-- XML attr mapping example -->
-						<h4>Decomposing into topics: <q>XML Attribute Mapping</q></h4>
+						<p>Decomposing into topics: <q>XML Attribute Mapping</q></p>
 						<span>
 							<img src="img/Bal2021nord01280104.png" alt="XML attribute mapping in Teamcenter"/>
 						</span>
@@ -265,21 +265,20 @@
 					</section>
 					
 					<section>
-						<h4>Beta Testing DLLs</h4>
-						
 						<span>
 							<img src="img/big-engine.jpg" alt="Huge engine, small car" style="width: 50%"/>
 						</span>
 						
 						<aside class="notes">
+							<p>Siemens devs started fixing stuff I reported</p>
 							<p>First fix allowed import, decompose to complete</p>
-							<p>TC does XML internally</p>
+							<p>Let's discuss some of the issues</p>
+							<p><q>SGML teaching experience</q></p>
 						</aside>
 					</section>
 					
-					<!-- ADD: suitable graphic as background -->
 					<section>
-						<h4>Graphic Entities</h4>
+						<p>Graphic entities</p>
 						
 						<p class="r-fit-text">&lt;!ENTITY g5027619-00.cgm SYSTEM "g5027619-00.cgm" NDATA cgm></p>
 						
@@ -307,14 +306,14 @@
 						
 						<aside class="notes">
 							<p>This was common (and I understand why)</p>
-							<p>So I tried this but TC wouldn't accept it</p>
+							<p>So I tried a hack but TC wouldn't accept it</p>
 							<p>(because the entity name mapping rules look for suffixes)</p>
 							<p>And of course, there were variations of the naming conventions</p>
 						</aside>
 					</section>
 					
 					<section>
-						<h4><code>DOCTYPE</code></h4>
+						<p><code>DOCTYPE</code></p>
 						
 						<span>
 							<img src="img/6000-lines.png" alt="6000 lines of graphic entity declarations"/>
@@ -329,7 +328,7 @@
 					</section>
 					
 					<section>
-						<h4>SGML Inclusions</h4>
+						<p>SGML inclusions</p>
 						
 						<!-- N&F image -->
 						<span>
@@ -343,7 +342,7 @@
 					</section>
 					
 					<section>
-						<h4><code>EMPTY</code> elements</h4>
+						<p><code>EMPTY</code> elements</p>
 						
 						<!-- EMPTY element in SGML -->
 						<pre>
@@ -377,7 +376,7 @@
 					</section>
 					
 					<section>
-						<h4>Dropping Content</h4>
+						<p>Dropping content</p>
 						
 						<pre>
                             <code class="xml" data-trim data-noescape>&lt;SBEFF EFFTEXT="Bolthead at Bolthole No. 15 Facing 
@@ -398,7 +397,7 @@ the 12:00 o"></code>
 					</section>
 					
 					<section>
-						<h4>Publishing</h4>
+						<p>Publishing</p>
 						<p class="fragment"><q>DSSSL, anyone?</q></p>
 						
 						<aside class="notes">
@@ -423,7 +422,7 @@ the 12:00 o"></code>
 					</section>
 					
 					<section>
-						<h4>The XML bits were uncomplicated</h4>
+						<p>The XML bits were uncomplicated</p>
 						
 						<pre>
                             <code class="bash" data-trim data-noescape>0-em-basic-structure.xml
@@ -466,7 +465,7 @@ the 12:00 o"></code>
 					</section>
 					
 					<section>
-						<h4>Other Issues</h4>
+						<p>Other issues</p>
 						<ul>
 							<li>Decompose/compose performance</li>
 							<li>Editor integration</li>
@@ -616,14 +615,12 @@ the 12:00 o"></code>
 					</section>
 					
 					<section>
-						<h3>SGML?</h3>
+						<p>SGML?</p>
 						
 						<ul>
 							<li class="fragment">No infrastructure (we built all of it, every single time)</li>
 							<li class="fragment">Works as a publishing format</li>
 						</ul>
-						
-						<!--<p class="fragment">Sounds Good, Maybe Later</p>-->
 						
 						<aside class="notes">
 							<p>I cannot stress this enough: SGML has no infrastructure</p>
