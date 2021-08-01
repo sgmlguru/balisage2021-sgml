@@ -75,7 +75,11 @@
 					</section>
 					
 					<section>
-						<p>SGML?</p>
+						<h4>SGML?</h4>
+						
+						<span>
+							<img src="img/sgml-cd-cover.jpg" alt="SGML CD book cover" style="width: 25%"/>
+						</span>
 						
 						<aside class="notes">
 							<p>Remember SGML?</p>
@@ -84,12 +88,8 @@
 						</aside>
 					</section>
 					
-					<!--<section>
-						<h3>Service Lifecycle Management (<q>SLM</q>) Topics</h3>
-					</section>-->
-					
 					<section>
-						<p>Engineering data</p>
+						<h4>SLM and Engineering Data</h4>
 						
 						<span>
 							<img src="img/FreeCAD_version_0.15.jpg" alt="FreeCAD screenshot with toy plane" style="width: 75%"/>
@@ -106,10 +106,10 @@
 					</section>
 					
 					<section>
-						<p>Marry CAD with topics</p>
+						<h4>Marry CAD with topics</h4>
 						
 						<span>
-							<img src="img/Bal2021nord01280102.png" alt="Rapid Author and engineering data" style="width: 75%"/>
+							<img src="img/Bal2021nord01280102.png" alt="Rapid Author, engineering data and embedded XMAX editor" style="width: 75%"/>
 						</span>
 						
 						<p class="fragment">Enter Siemens Teamcenter</p>
@@ -121,7 +121,7 @@
 					</section>
 					
 					<section>
-						<p>Teamcenter CMS Module</p>
+						<h4>Teamcenter CMS Module</h4>
 						<span>
 							<img src="img/Bal2021nord01280103.png" alt="Publication Structure in Teamcenter CMS"/>
 						</span>
@@ -136,7 +136,7 @@
 					
 					<section>
 						<!-- XML attr mapping example -->
-						<p>Decomposing into topics: <q>XML Attribute Mapping</q></p>
+						<h4>Decomposing into topics: <q>XML Attribute Mapping</q></h4>
 						<span>
 							<img src="img/Bal2021nord01280104.png" alt="XML attribute mapping in Teamcenter"/>
 						</span>
@@ -223,6 +223,10 @@
 					<section>
 						<h3>But Does It Really?</h3>
 						
+						<span>
+							<img src="img/winter-car-breakdown.jpg" alt="Car broken down on winter road" style="width: 50%"/>
+						</span>
+						
 						<aside class="notes">
 							<p>I started testing days after joining</p>
 							<p>I taught myself TC alongside the testing</p>
@@ -250,6 +254,10 @@
 					<section>
 						<h3>Why Not?</h3>
 						
+						<span>
+							<img src="img/interior-beat-up-classic-car-fifties.jpg" alt="Interior of a beat-up fifties car" style="width: 50%"/>
+						</span>
+						
 						<aside class="notes">
 							<p>Thinking S1000D 1.8 SGML was the only previous test</p>
 							<p>No decompose needed</p>
@@ -258,6 +266,10 @@
 					
 					<section>
 						<h4>Beta Testing DLLs</h4>
+						
+						<span>
+							<img src="img/big-engine.jpg" alt="Huge engine, small car" style="width: 50%"/>
+						</span>
 						
 						<aside class="notes">
 							<p>First fix allowed import, decompose to complete</p>
@@ -321,7 +333,7 @@
 						
 						<!-- N&F image -->
 						<span>
-							<img src="img/em-dtd-inclusions.png" alt="EM DTD inclusions on root element" style="width: 40%"/>
+							<img src="img/em-dtd-inclusions.png" alt="EM DTD inclusions on root element" style="width: 30%"/>
 						</span>
 						
 						<aside class="notes">
@@ -378,9 +390,10 @@ the 12:00 o"></code>
 						</pre>
 						
 						<aside class="notes">
-							<p>But far worse were things like this</p>
-							<p>Content would be silently dropped after the apostrophe</p>
-							<p>Plus ALL attributes after the offending one, in document order</p>
+							<p>But far worse...</p>
+							<p>Content silently dropped after apostrophe</p>
+							<p>Plus ALL attributes after it</p>
+							<p>Spotted this because @SBNBR is required</p>
 						</aside>
 					</section>
 					
@@ -394,6 +407,7 @@ the 12:00 o"></code>
 					</section>
 					
 					<section>
+						<p>Nah, XML technologies:</p>
 						<ol>
 							<li class="fragment">SP for SGML to XML syntax - <q>ATA-like XML</q></li>
 							<li class="fragment">XProc pipeline to convert to <q>monolithic DITA</q></li>
@@ -452,6 +466,7 @@ the 12:00 o"></code>
 					</section>
 					
 					<section>
+						<h4>Other Issues</h4>
 						<ul>
 							<li>Decompose/compose performance</li>
 							<li>Editor integration</li>
@@ -593,7 +608,7 @@ the 12:00 o"></code>
 				<section data-background="img/" data-background-size="100%">
 					<section>
 						<h3>Now</h3>
-						<p class="fragment">They're testing the ATA XML approach right now</p>
+						<p class="fragment">They're testing the ATA XML approach as I speak</p>
 						
 						<aside class="notes">
 							<p>I've been on holiday, I finished this right before I left</p>
@@ -601,15 +616,16 @@ the 12:00 o"></code>
 					</section>
 					
 					<section>
-						<h3>SGML? Really?</h3>
+						<h3>SGML?</h3>
 						
 						<ul>
-							<li class="fragment">SGML has no infrastructure (we built all of it, every single time)</li>
-							<li class="fragment">SGML works as an output format</li>
+							<li class="fragment">No infrastructure (we built all of it, every single time)</li>
+							<li class="fragment">Works as a publishing format</li>
 						</ul>
 						
+						<!--<p class="fragment">Sounds Good, Maybe Later</p>-->
+						
 						<aside class="notes">
-							<!-- Is SGML an option still? No. -->
 							<p>I cannot stress this enough: SGML has no infrastructure</p>
 							<p>SGML projects used to run for a year - remember that?</p>
 							<p>Use it as a publishing format and convince the recipients to move away from it, too</p>
@@ -618,6 +634,10 @@ the 12:00 o"></code>
 					
 					<section data-background="img/" data-background-size="118%">
 						<h3>Thank You!</h3>
+						
+						<span>
+							<img src="img/site-under-construction.png" alt="Site under construction" style="width: 40%"/>
+						</span>
 						
 						<aside class="notes">
 							<p>Questions?</p>
